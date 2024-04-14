@@ -13,4 +13,7 @@ const compat = new FlatCompat({baseDirectory: __dirname, recommendedConfig: plug
 export default [
   {languageOptions: { globals: globals.node }},
   ...compat.extends("airbnb-base"),
+  {
+    ignores: ["eslint.config.js"]
+  }
 ];
