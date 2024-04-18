@@ -8,7 +8,7 @@ import game from '../index.js';
 const description = 'Find the greatest common divisor of given numbers.';
 
 const randomNumberNotZero = () => {
-  const maxValue = 10;
+  const maxValue = 100;
   return (Math.floor(Math.random() * maxValue + 1));
 };
 
