@@ -6,6 +6,7 @@
   "type": "module",
   "bin": {
     "brain-even": "bin/brain-even.js",
+    "brain-calc": "bin/brain-calc.js",
     "brain-games": "bin/brain-games.js"
   },
   "scripts": {
