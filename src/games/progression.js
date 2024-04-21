@@ -5,7 +5,7 @@
 /* eslint-disable no-console */
 import game from '../index.js';
 
-const description = 'What is the result of the expression?';
+const description = 'What number is missing in the progression?';
 
 const randomNumber = () => {
   const maxValue = 10;
