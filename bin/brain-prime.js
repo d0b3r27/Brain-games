@@ -3,6 +3,6 @@
 /* eslint-disable import/no-named-as-default-member */
 /* eslint-disable import/no-named-as-default */
 /* eslint-disable import/extensions */
-import calcGame from '../src/games/prime.js';
+import primeGame from '../src/games/prime.js';
 
-calcGame();
+primeGame();
