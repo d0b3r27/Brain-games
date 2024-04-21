@@ -16,11 +16,10 @@ const isPrime = (num) => {
   let answer = 'yes';
   if (num < 2) {
     answer = 'no';
-  } else {
-    for (let i = 2; i < num; i += 1) {
-      if (num % i === 0) {
-        answer = 'no';
-      }
+  }
+  for (let i = 2; i < num; i += 1) {
+    if (num % i === 0) {
+      answer = 'no';
     }
   }
   return answer;
