@@ -14,11 +14,11 @@ const randomNumber = () => {
 
 const progressionLength = 10;
 const count = 2;
-const replacementNumber = Math.floor(Math.random() * progressionLength);
 
 const questionAnswer = () => {
   let startNumber = randomNumber();
   const progression = [startNumber];
+  const replacementNumber = Math.floor(Math.random() * progressionLength);
 
   for (let i = 1; i < progressionLength; i += 1) {
     startNumber += count;
