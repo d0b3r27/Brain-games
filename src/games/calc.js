@@ -4,33 +4,32 @@
 /* eslint-disable import/extensions */
 /* eslint-disable no-console */
 import game from '../index.js';
+import { randomNumber } from '../helper.js';
 
 const description = 'What is the result of the expression?';
 
-const randomNumber = () => {
-  const maxValue = 10;
-  return (Math.floor(Math.random() * maxValue));
+const operations = ['+', '-', '*'];
+const rightAnswer = (num1, num2, operator) => {
+  let answer;
+  if (operator === '+') {
+    answer = num1 + num2;
+  } else if (operator === '-') {
+    answer = num1 - num2;
+  } else {
+    answer = num1 * num2;
+  }
+  return answer;
 };
 
-const operations = ['+', '-', '*'];
-
-const questionAnswer = () => {
-  const number1 = randomNumber();
-  const number2 = randomNumber();
+const getQuestionAnswer = () => {
+  const number1 = randomNumber(10);
+  const number2 = randomNumber(10);
   const randomOperation = operations[Math.floor(Math.random() * operations.length)];
   const question = `${number1} ${randomOperation} ${number2}`;
 
-  let rightAnswer;
-  if (randomOperation === '+') {
-    rightAnswer = number1 + number2;
-  } else if (randomOperation === '-') {
-    rightAnswer = number1 - number2;
-  } else {
-    rightAnswer = number1 * number2;
-  }
-  return [question, rightAnswer.toString()];
+  return [question, rightAnswer(number1, number2, randomOperation).toString()];
 };
 
 export default () => {
-  game(description, questionAnswer);
+  game(description, getQuestionAnswer);
 };

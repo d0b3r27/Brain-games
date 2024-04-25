@@ -3,7 +3,7 @@ import readlineSync from 'readline-sync';
 
 const maxRound = 3;
 
-export default (description, questionAnswer) => {
+export default (description, getQuestionAnswer) => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
@@ -11,7 +11,7 @@ export default (description, questionAnswer) => {
   console.log(description);
 
   for (let i = 0; i < maxRound; i += 1) {
-    const [question, rightAnswer] = questionAnswer();
+    const [question, rightAnswer] = getQuestionAnswer();
     console.log(`Question: ${question}`);
 
     const answer = readlineSync.question('Your answer: ');
@@ -21,11 +21,8 @@ export default (description, questionAnswer) => {
     } else {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'`);
       console.log(`Let's try again, ${name}!`);
-      break;
+      return;
     }
-
-    if (i === 2) {
-      console.log(`Congratulations, ${name}!`);
-    }
+    console.log(`Congratulations, ${name}!`);
   }
 };

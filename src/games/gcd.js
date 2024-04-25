@@ -4,30 +4,33 @@
 /* eslint-disable import/extensions */
 /* eslint-disable no-console */
 import game from '../index.js';
+import { randomNumberNotZero } from '../helper.js';
 
 const description = 'Find the greatest common divisor of given numbers.';
 
-const randomNumberNotZero = () => {
-  const maxValue = 100;
-  return (Math.floor(Math.random() * maxValue + 1));
-};
+const getGcd = (num1, num2) => {
+  let num1Copy = num1;
+  let num2Copy = num2;
 
-const questionAnswer = () => {
-  let number1 = randomNumberNotZero();
-  let number2 = randomNumberNotZero();
-  const question = `${number1} ${number2}`;
-
-  while (number1 !== 0 && number2 !== 0) {
-    if (number1 > number2) {
-      number1 %= number2;
+  while (num1Copy !== 0 && num2Copy !== 0) {
+    if (num1Copy > num2Copy) {
+      num1Copy %= num2Copy;
     } else {
-      number2 %= number1;
+      num2Copy %= num1Copy;
     }
   }
-  const rightAnswer = number1 + number2;
+  return num1Copy + num2Copy;
+};
+
+const getQuestionAnswer = () => {
+  const number1 = randomNumberNotZero(100);
+  const number2 = randomNumberNotZero(100);
+  const question = `${number1} ${number2}`;
+
+  const rightAnswer = getGcd(number1, number2);
   return [question, rightAnswer.toString()];
 };
 
 export default () => {
-  game(description, questionAnswer);
+  game(description, getQuestionAnswer);
 };

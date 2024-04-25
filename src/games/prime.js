@@ -4,33 +4,28 @@
 /* eslint-disable import/extensions */
 /* eslint-disable no-console */
 import game from '../index.js';
+import { randomNumber } from '../helper.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 
-const randomNumber = () => {
-  const maxValue = 30;
-  return (Math.floor(Math.random() * maxValue));
-};
-
 const isPrime = (num) => {
-  let answer = 'yes';
   if (num < 2) {
-    answer = 'no';
+    return false;
   }
   for (let i = 2; i < num; i += 1) {
     if (num % i === 0) {
-      answer = 'no';
+      return false;
     }
   }
-  return answer;
+  return true;
 };
 
-const questionAnswer = () => {
-  const question = randomNumber();
-  const rightAnswer = isPrime(question);
+const getQuestionAnswer = () => {
+  const question = randomNumber(30);
+  const rightAnswer = isPrime(question) ? 'yes' : 'no';
   return [question, rightAnswer];
 };
 
 export default () => {
-  game(description, questionAnswer);
+  game(description, getQuestionAnswer);
 };
