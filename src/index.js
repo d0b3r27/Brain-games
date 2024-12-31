@@ -23,6 +23,8 @@ export default (description, getQuestionAnswer) => {
       console.log(`Let's try again, ${name}!`);
       return;
     }
-    console.log(`Congratulations, ${name}!`);
+    if (i === 2) {
+      console.log(`Congratulations, ${name}!`);
+    }
   }
 };
