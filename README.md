@@ -27,7 +27,7 @@ make brain-even
 
 ### Пример работы:
 
-[Brain-even game](https://asciinema.org/a/M2cHeDYt8480ACgyWsftbPePt)  
+[Brain-even game](https://asciinema.org/a/eiioC51VaCrZBD9cqQPIi3rmJ)  
 [Brain-calc game](https://asciinema.org/a/tyApUC9Xsu5qQ1WKpkyhIhEuw)  
 [Brain-gcd game](https://asciinema.org/a/FfV8GeCnLo1rrAFnoQNExxSdv)  
 [Brain-progression game](https://asciinema.org/a/D2m7Z2L8PxcinWLPh71jUaVPT)  
