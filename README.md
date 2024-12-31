@@ -13,14 +13,21 @@ Nodejs не ниже 21.7.3
 Установленная утилита "Make"
 
 ### Установка:
-выполнить "npm link"
+```bash
+make install
+```
 
 ### Запуск:
 make 'имя_игры'
 
+Например:
+```bash
+make brain-even
+```
+
 ### Пример работы:
 
-[Brain-even game](https://asciinema.org/a/WSfjZlEgfDvy5Q9YKHibAJGUZ)  
+[Brain-even game](https://asciinema.org/a/M2cHeDYt8480ACgyWsftbPePt)  
 [Brain-calc game](https://asciinema.org/a/Fs2RMoEXP2P8jxIUzlnvqlWHf)  
 [Brain-gcd game](https://asciinema.org/a/hwQAGaknooiHMDOERBLVLzxGg)  
 [Brain-progression game](https://asciinema.org/a/cxmIkR1W6pGhYSgZ23IjKmO4Z)  
